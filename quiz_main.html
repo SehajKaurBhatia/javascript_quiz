@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="text/javascript">
+    const Func1 = () => {
+        
+var isSelected = document.querySelector("input[name='mcqgrp']:checked");
+
+if (isSelected) {
+    var checkvalue = isSelected.value;
+
+    if (checkvalue === "correct") {
+        alert("Correct");
+    } else {
+        alert("Inorrect");
+    }
+}
+else{
+   
+    alert("select an answer");
+     
+}
+
+        
+};
+const Func2=()=>{
+    var blank=document.getElementById("blank");
+    if(blank.value==="Aryabhata"){
+        alert("Correct");
+    }
+    else if(blank.value===""){
+        alert("enter an answer");
+    }
+    else{
+        alert("Incorrect");
+    }
+};
+const Func3=()=>{
+    
+    var arr=document.querySelectorAll("input[name='check1']");
+    var checked=Array.from(arr).filter(checkbox=>checkbox.checked && checkbox.value==="correct" )
+    
+    var mcqs2checked=document.querySelector("#mcqs2:checked");
+    
+    if((!mcqs2checked) && checked.length===3 ){
+        alert("Correct");
+    }
+    else if(mcqs2checked) {
+        alert("Incorrect");
+    }
+    else if( checked.length!==3 && checked.length>=1){
+        alert("not all correct options selected");
+    }
+    };
+    const Func4=()=>{
+        var tru=document.querySelector("input[name='mcqgroup']:checked");
+        if(tru){
+            var isValue=tru.value;
+            if(isValue==="false"){
+                alert("Correct");
+            }
+            else{
+                alert("Incorrect");
+            }
+        }
+        else{
+            alert("Select an option.");
+        }
+    }
+    const Func5=()=>{
+            var Ischecked=document.querySelector("input[name='mcqgrp1']:checked");
+            if(Ischecked){
+                var val2=Ischecked.value;
+                if(val2==="Correct"){
+                    alert("Correct");
+                }
+                else{
+                    alert("Incorrect");
+                }
+            }
+            else{
+                alert("Select an option");
+            }
+    };
+
+    document.addEventListener("DOMContentLoaded",function(){
+        document.getElementById("submitbtn").addEventListener('click',function(){
+            document.getElementById("btn1").classList.remove('hidden');
+            document.getElementById("btn2").classList.remove('hidden');
+            document.getElementById("btn3").classList.remove('hidden');
+            document.getElementById("btn4").classList.remove('hidden');
+            document.getElementById("btn5").classList.remove('hidden');
+        });
+    });
+</script>
+<body>
+    <style>
+        .hidden{
+            display:none;
+        }
+        *{
+            font-family:Arial, Helvetica, sans-serif;
+            margin-left:10px;
+           color:white;
+           
+        }
+        .homepage{
+            border:5px solid rgb(239, 208, 127);
+            margin-top:-8px;
+            margin-left:-20px;
+            width:1484px;
+            height:755px;
+            position:fixed;
+            overflow-y: scroll;
+            background-image: linear-gradient(#5ad1cb,#edb6c8,#f3b79b);
+            /* scrollbar-base-color: yellowgreen; */
+        }
+        ::-webkit-scrollbar {
+    width: 12px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(229, 150, 203); /* color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c685f1; /* color of the scrollbar thumb */
+}
+::-webkit-scrollbar-corner {
+    background-color: transparent; /* color of the scrollbar corner */
+}
+
+::-webkit-resizer {
+    background-color: transparent; /* color of the resizer */
+}
+        .banner p{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight:500;
+            font-size:x-large;
+
+        }
+        .q1 p{
+            margin-top:80px;
+            font-size:x-large;
+            
+        }
+       
+        #ques{
+            margin-top:-20px;
+            font-size:large;
+           
+            
+            width:460px;
+            text-shadow: rgb(180, 26, 142) 4px 0 5px;
+
+        }
+        .mcq1 {
+            position:relative;
+            margin-top:-20px;
+            font-size:20px;
+        }
+        #mcq{
+           height:20px;
+           width:20px;
+        }
+        .q2{
+            margin-top:30px;
+            font-size:x-large;
+        }
+         .ques2{
+            margin-top:-30px;
+            font-size:large;
+            text-shadow: rgb(180, 26, 142) 4px 0 5px;
+        }
+        #blank{
+            transform:translateY(-40px);
+            /* border:1px solid ; */
+            border:none;
+            border-bottom: 1px solid black;
+            outline:none;
+            font-size: larger;
+            background: transparent;
+        }
+        .q3{
+            margin-top:-30px;
+            font-size:x-large;
+        }
+        #ques3{
+            margin-top:-36px;
+            font-size:large;
+            text-shadow: rgb(180, 26, 142) 4px 0 5px;
+        }
+        #mcqs{
+           height:20px;
+           width:20px;
+        }
+        .q4{
+            
+            font-size:x-large;
+        }
+        #ques4{
+            font-size:large;
+            margin-top:-10px;
+            text-shadow: rgb(180, 26, 142) 4px 0 5px;
+        }
+         #tf{
+            height:20px;
+            width:20px;
+            
+        }
+        .tf{
+            font-size:large;
+        }
+        .q5{
+            font-size:x-large;
+        }
+        #last{
+            margin-top:-40px;
+            font-size:large;
+            text-shadow: rgb(180, 26, 142) 4px 0 5px;
+        }
+        .lastmcq{
+            margin-top:-30px;
+            font-size:20px;
+            height:70px;
+        }
+        button{
+            margin-left:600px;
+            color:white;
+            font-style: italic;
+            font-weight:900;
+            background:transparent;
+            border:2px solid white;
+            border-radius:20px;
+            height: 40px;
+            width:100px;
+            padding:1px;
+            transform:translateY(-20px);
+        }
+        button:hover{
+            cursor: pointer;
+        }
+    </style>
+    
+       
+
+        
+    
+    <div class="homepage">
+    <div class="banner">
+        <h1 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-style: italic; text-shadow: #a03b10 4px 0px 5px;">Quiz Test</h1>
+        <p>Instructions: Each question is mandatory. Consists of fill-ups and mcqs.
+        </p>
+    </div>
+    <div class="questions">
+        <div class="q1">
+            <p style="color:rgb(254, 228, 172); font-weight:700;">Question 1:</p><br>
+            <p id="ques">What is the factorial of 5?
+                
+             </p><br>
+             <div class="mcq1">
+             <input type="radio" id="mcq1" name="mcqgrp" value="correct"><label>120</label>
+             <input type="radio" id="mcq2" name="mcqgrp" value="incorrect"><label>24</label>
+             <input type="radio" id="mcq3" name="mcqgrp" value="incorrect"><label>125</label>
+             <input type="radio" id="mcq4" name="mcqgrp" value="incorrect"><label>250</label>
+             <button class="hidden" id="btn1" onClick={Func1()} >Check Answer</button>
+            </div><br>
+        </div>
+         <div class="q2">
+            <p style="color:rgb(254, 228, 172); font-weight:700;">Question 2:</p><br>
+            <p class="ques2">Who invented the concept of '0'?(First letter capital)</p><br>
+            <input type="text" id="blank"  name="fill-up">
+            <button class="hidden" id="btn2" onClick={Func2()} >Check Answer</button>
+        </div><br>
+         <div class="q3">
+            <p style="color:rgb(254, 228, 172); font-weight:700;">Question 3:</p><br>
+            <p id="ques3">Divisors of 6.</p>
+            <input type="checkbox" id="mcqs1"name="check1" value="correct"><Label>2</Label>
+            <input type="checkbox" id="mcqs2" name="check1" value="incorrect"><Label>4</Label>
+            <input type="checkbox" id="mcqs3" name="check1" value="correct"><Label>3</Label>
+            <input type="checkbox" id="mcqs4" name="check1" value="correct"><Label>6</Label>
+            <button class="hidden" id="btn3" onClick={Func3()}>Check Answer</button>
+        </div><br>
+        <div class="q4">
+            <p style="color:rgb(254, 228, 172); font-weight:700;">Question 4:</p>
+            <p id="ques4">Is 1 a prime number?</p>
+            <div class="tf">
+            <input type="radio" id="tf1" name="mcqgroup" value="true"><Label>Yes</Label>
+             <input type="radio" id="tf2" name="mcqgroup" value="false"><Label>No</Label>
+             <button class="hidden" id="btn4" onClick={Func4()}>Check Answer</button>
+            </div><br>
+         </div> 
+        <div class="q5">
+            <p style="color:rgb(254, 228, 172); font-weight:700;">Question 5:</p><br>
+            <p id="last">Value of 25x75.
+             </p><br>
+             <div class="lastmcq">
+             <input type="radio" id="m1" name="mcqgrp1" value="Incorrect"><Label>1625</Label>
+             <input type="radio" id="m2" name="mcqgrp1"  value="Incorrect"><Label>2225</Label>
+             <input type="radio" id="m3" name="mcqgrp1"  value="Correct"><Label>1875</Label>
+             <input type="radio" id="m4" name="mcqgrp1"  value="Incorrect"><Label>1785</Label>
+             <button class="hidden" id="btn5" onClick={Func5()}>Check Answer</button>
+            </div>
+            <button id="submitbtn">Submit</button>
+        </div> 
+
+    </div>
+</div>
+</body>
+</html>
